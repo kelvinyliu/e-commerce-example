@@ -1,4 +1,4 @@
-import { Link, Route, Routes } from "react-router-dom"
+import { Link } from "react-router-dom"
 import "./HeaderBar.css"
 import { useState } from "react"
 import { ShoppingCartItem } from "./ShoppingCartItem";
