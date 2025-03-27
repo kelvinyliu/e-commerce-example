@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import './ShopItem.css'
 
 function ShopItem({id, name, price, description, image, handleClick}: {id:number, name:string, price:number, description:string, image:string, handleClick: (id: number, quantity: number, price: number, name: string) => void}) {
@@ -21,7 +21,7 @@ function ShopItem({id, name, price, description, image, handleClick}: {id:number
             <h1 className="shop-item-name">{name}</h1>
             <p className="shop-item-description">{description}</p>
             <div className="item-quantity-selection">
-                <h2>{price}</h2>
+                <h2>{price.toFixed(2)}</h2>
                 <label htmlFor="i-quantity">Quantity:</label>
                 <input type="number" name="i-quantity" id="item-quantity" onChange={e => setItemQuantity(Number.parseInt(e.target.value))} />
                 <input type="button" value="Add to cart" onClick={handleAddToCartClick}/>

@@ -5,6 +5,10 @@ body {
   margin: 0;
 }
 
+h1 {
+  margin: 0
+}
+
 .inconsolata-default {
   font-family: "Inconsolata", monospace;
   font-optical-sizing: auto;
