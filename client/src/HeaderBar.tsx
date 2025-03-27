@@ -19,7 +19,7 @@ function HeaderBar() {
                     <Link to="/cart"
                         onMouseEnter={() => {
                             const cart = localStorage.getItem("exampleShoppingCart")
-                            
+
                             setShoppingCart(cart ? JSON.parse(cart) : [])
                             setHoverState(true)
                         }}
@@ -31,13 +31,16 @@ function HeaderBar() {
                     {shoppingCart.length === 0 ? (
                         <p>Your cart is empty</p>
                     ) : (
-                        <ul>
-                            {shoppingCart.map((item) => (
-                                <li key={item.id}>
-                                    {item.name} x {item.quantity} - {(item.price * item.quantity).toFixed(2)}
-                                </li>
-                            ))}
-                        </ul>
+                        <>
+                            <ul>
+                                {shoppingCart.map((item) => (
+                                    <li key={item.id}>
+                                        {item.name} x {item.quantity} - {(item.price * item.quantity).toFixed(2)}
+                                    </li>
+                                ))}
+                            </ul>
+                            <p>Total: {shoppingCart.reduce((sum, current) => sum += current.price * current.quantity, 0).toFixed(2)}</p>
+                        </>
                     )}
                 </div>
             ) : null}

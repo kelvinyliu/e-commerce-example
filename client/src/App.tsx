@@ -15,6 +15,7 @@ function App() {
   });
 
   const [shopProducts, setShopProducts] = useState<Product[]>([]);
+  const [notification, setNotification] = useState<string | null>(null);
 
 
   function addToCart(id: number, quantity: number, price: number, name: string) {
@@ -30,6 +31,12 @@ function App() {
         return [...prevCart, { id, quantity, price, name }]
       }
     });
+
+    setNotification(`${quantity} ${name} added to cart!`);
+    // auto remove notification after 1.5 seconds
+    setTimeout(() => {
+      setNotification(null);
+    }, 1500);
   }
 
   // updates local storage on shopping cart change
@@ -63,6 +70,13 @@ function App() {
           ))
         }
       </div>
+
+      {notification && (
+        <div className="notification">
+          {notification}
+        </div>
+      )}
+
     </>
   )
 }
