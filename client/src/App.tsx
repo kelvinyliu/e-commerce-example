@@ -49,6 +49,7 @@ function App() {
 
   return (
     <>
+      {/* Load products */}
       <div id="shopping-cart" className="inconsolata-default">
         {
           shopProducts.map((item) => (
@@ -61,9 +62,7 @@ function App() {
               handleClick={addToCart} />
           ))
         }
-
       </div>
-
     </>
   )
 }
