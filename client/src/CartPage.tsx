@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ShoppingCartItem } from "./ShoppingCartItem";
+import "./CartPage.css"
 
 
 function CartPage() {
